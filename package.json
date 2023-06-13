@@ -58,7 +58,7 @@
     "postcss": "^8.4.24",
     "sass": "^1.62.1",
     "unocss": "^0.53.1",
-    "unocss-applet": "^0.5.2",
+    "unocss-applet": "^0.5.3",
     "unocss-preset-extra": "^0.5.2",
     "vite": "^4.3.9",
     "vite-plugin-inspect": "^0.7.28"
