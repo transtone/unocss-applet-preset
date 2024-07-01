@@ -1,0 +1,17 @@
+ .space-x-12rpx>view+view,
+ .space-x-12rpx>button+button,
+ .space-x-12rpx>text+text,
+ .space-x-12rpx>image+image {
+   --un-space-x-reverse: 0;
+   margin-left: calc(12rpx * calc(1 - var(--un-space-x-reverse)));
+   margin-right: calc(12rpx * var(--un-space-x-reverse));
+ }
+
+ .space-x-24rpx>view+view,
+ .space-x-24rpx>button+button,
+ .space-x-24rpx>text+text,
+ .space-x-24rpx>image+image {
+   --un-space-x-reverse: 0;
+   margin-left: calc(24rpx * calc(1 - var(--un-space-x-reverse)));
+   margin-right: calc(24rpx * var(--un-space-x-reverse));
+ }
