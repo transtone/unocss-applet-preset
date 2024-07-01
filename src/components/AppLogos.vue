@@ -4,7 +4,7 @@
       flex
       flex-col
       items-center
-      hover-class="drop-shadow-md drop-shadow-color-green5"
+      hover-class="drop-shadow-md drop-shadow-color-green5 space-x-12rpx"
     >
       <image inline-block h-18 w-18 src="/static/logo.svg" />
       <text mt--2 text-green5>
