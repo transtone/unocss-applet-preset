@@ -1,29 +1,30 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "target": "es2018",
-    "jsx": "preserve",
+    "ignoreDeprecations": "5.0",
     "lib": ["esnext", "dom"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "types": [
-      "node",
-      "vite/client"
-    ],
-    "strict": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true
+      "@dcloudio/types",
+      "miniprogram-api-typings",
+      "mini-types",
+      "@uni-helper/uni-cloud-types",
+      "@uni-helper/uni-ui-types",
+      "@uni-helper/uni-app-types"
+    ]
   },
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue"],
-  "exclude": [
-    "**/dist/**",
-    "**/node_modules/**",
-    "**/client/**",
-    "**/playground/**",
-    "**/examples/**",
-    "**/interactive/**",
-    "**/test/dts/**"
-  ]
+  "include": [
+    "**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.jsx",
+    "src/**/*.vue"
+  ],
+  "vueCompilerOptions": {
+    "plugins": ["@uni-helper/uni-app-types/volar-plugin"]
+  }
 }
