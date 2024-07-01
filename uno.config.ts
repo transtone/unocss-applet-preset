@@ -1,3 +1,4 @@
+import process from 'node:process'
 import type { Preset, SourceCodeTransformer } from 'unocss'
 import {
   defineConfig,
@@ -11,13 +12,8 @@ import {
 import {
   presetApplet,
   presetRemRpx,
-  transformerApplet,
   transformerAttributify,
 } from 'unocss-applet'
-
-import { presetAno } from 'ano-ui'
-
-import { presetExtra } from 'unocss-preset-extra'
 
 const isApplet = process.env?.UNI_PLATFORM?.startsWith('mp') ?? false
 const presets: Preset[] = []
@@ -27,7 +23,6 @@ if (isApplet) {
   presets.push(presetApplet())
   presets.push(presetRemRpx())
   transformers.push(transformerAttributify({ ignoreAttributes: ['block'] }))
-  transformers.push(transformerApplet())
 }
 else {
   presets.push(presetUno())
@@ -44,6 +39,9 @@ export default defineConfig({
       error: '#FF5C5C',
       info: '#373e47',
     },
+  },
+  shortcuts: {
+    'u-text-color': 'text-[#323233] dark:text-[#F5F5F5]',
   },
   safelist: [
     ...['primary', 'secondary', 'success', 'warning', 'error', 'info'].map(c => `bg-${c}`),
@@ -63,8 +61,6 @@ export default defineConfig({
      */
     presetAttributify(),
     ...presets,
-    presetExtra(),
-    presetAno(),
   ],
   transformers: [
     transformerDirectives(),

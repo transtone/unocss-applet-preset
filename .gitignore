@@ -7,6 +7,7 @@ coverage
 dist
 lib-cov
 logs
-node_modules/
+node_modules
 temp
 .hbuilderx
+/bun.lockb
